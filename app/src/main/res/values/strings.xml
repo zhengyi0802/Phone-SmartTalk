@@ -5,4 +5,7 @@
     <string name="speech">Speech</string>
     <string name="execute">Execute</string>
 
+    <string name="label_scanner">Scanner</string>
+    <string name="label_scanner_descriptions">Please scan the QR Code from Soundbar App for Login</string>
+
 </resources>
