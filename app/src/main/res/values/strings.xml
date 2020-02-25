@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">SmartTalk</string>
+
+    <string name="start_speek">Start Speek</string>
+    <string name="speech">Speech</string>
+    <string name="execute">Execute</string>
+
+</resources>
