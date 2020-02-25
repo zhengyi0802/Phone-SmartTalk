@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mButtonStart;
     private Button mButtonExecute;
     private TextView mOutEditText;
+    private TextView mQRCodeUrl;
     private ListView mConversationView;
     private Packages mPackages;
     private ArrayList<PInfo> mApps;
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         mButtonStart = (Button) findViewById(R.id.button_start);
         mButtonExecute = (Button) findViewById(R.id.button_execute);
         mOutEditText = (TextView) findViewById(R.id.edit_text_out);
+        mQRCodeUrl = (TextView) findViewById(R.id.qr_url);
         mConversationArrayAdapter = new ArrayAdapter<String>(this, R.layout.message);
         mConversationView.setAdapter(mConversationArrayAdapter);
 
@@ -116,7 +118,8 @@ public class MainActivity extends AppCompatActivity {
             if(result.getContents() == null) {
                 Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
             } else {
-                Toast.makeText(this, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Scanned: " + result.getFormatName(), Toast.LENGTH_LONG).show();
+                mQRCodeUrl.setText(result.getContents());
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data);

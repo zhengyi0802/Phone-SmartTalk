@@ -22,7 +22,7 @@
     <ListView
         android:id="@+id/speech_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="504dp"
         android:layout_weight="1"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
@@ -32,7 +32,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+        android:layout_weight="1"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/button_start"
@@ -44,7 +45,6 @@
             android:id="@+id/edit_text_out"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
             android:layout_weight="1" />
 
         <Button
@@ -53,6 +53,20 @@
             android:layout_height="wrap_content"
             android:enabled="false"
             android:text="@string/execute" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/qr_url"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:text="QRCode URL" />
     </LinearLayout>
 
 </LinearLayout>
