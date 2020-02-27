@@ -1,2 +1,2 @@
-include ':app'
+include ':SmartTalkTest1'
 rootProject.name='SmartTalk'

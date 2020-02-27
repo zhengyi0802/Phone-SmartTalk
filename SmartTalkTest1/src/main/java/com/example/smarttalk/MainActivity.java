@@ -27,6 +27,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private final static String TAG = "SmartTalk";
+    private static final int FUNC_LOGIN = 1;
 
     private SpeechRecognizer mSpeechRecognizer;
     private Button mButtonStart;
@@ -36,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
     private ListView mConversationView;
     private Packages mPackages;
     private ArrayList<PInfo> mApps;
+
+    private boolean loginFlag = true;
 
     /**
      * Array adapter for the conversation thread
@@ -99,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
         mPackages = new Packages(this);
         mApps = mPackages.getPackages();
 
+        gotoLogin();
         initScanner();
 
         return;
@@ -116,13 +120,20 @@ public class MainActivity extends AppCompatActivity {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         if(result != null) {
             if(result.getContents() == null) {
-                Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
+                //Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
             } else {
-                Toast.makeText(this, "Scanned: " + result.getFormatName(), Toast.LENGTH_LONG).show();
+                //Toast.makeText(this, "Scanned: " + result.getFormatName(), Toast.LENGTH_LONG).show();
                 mQRCodeUrl.setText(result.getContents());
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data);
+        }
+    }
+
+    private void gotoLogin() {
+        if (!loginFlag) {
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivityForResult(intent, FUNC_LOGIN);
         }
     }
 

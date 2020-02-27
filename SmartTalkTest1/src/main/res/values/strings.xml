@@ -8,4 +8,10 @@
     <string name="label_scanner">Scanner</string>
     <string name="label_scanner_descriptions">Please scan the QR Code from Soundbar App for Login</string>
 
+    <string name="label_login">Login</string>
+    <string name="label_register">Register</string>
+    <string name="label_user">Username</string>
+    <string name="label_pass">Password</string>
+    <string name="url_dbweb" translatable="false">http://member.mundi-tv.tk/mobile.php</string>
+
 </resources>
